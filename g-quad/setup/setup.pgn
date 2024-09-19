@@ -1,0 +1,34 @@
+## Description: Set up biomolecule for NAMD
+## Input: [ID].pdb
+## Output: [ID].namd.psf, [ID].namd.pdb
+
+# load psfgen package
+package require psfgen
+# load CHARMM36 topology file
+topology top_all36_prot_na.rtf
+
+# read in PDB structure; add end caps
+segment A {pdb [ID].pdb; first 5TER; last 3TER; auto angles dihedrals }
+
+# patch each nucleotide to convert RNA (default in CHARMM) to DNA
+patch DEO5 A:1
+patch DEOX A:2
+
+# read in PDB coordinates for protein assign to segment A
+coordpdb [ID].pdb A
+
+# read in PDB structure; add end caps
+segment B {pdb k.pdb; first NONE; last NONE; auto angles dihedrals }
+
+# read in PDB coordinates for K assign to segment B
+coordpdb k.pdb B
+
+# guess coordinates for any missing atoms (e.g., hydrogens)
+guesscoord
+
+# write out the connectivity information
+writepsf [ID].namd.psf
+# write out the converted PDB file
+writepdb [ID].namd.pdb
+
+exit
