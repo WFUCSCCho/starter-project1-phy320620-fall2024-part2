@@ -21,11 +21,10 @@ Note: This portion of the project will require that you have already mastered th
    ```
    where [username] should be replaced by your username.
 
-3. Clone this repository by using the following command:
+3. Clone this repository by using the following command (See Part 0, Part 4):
   ```
-  git clone git@github.com:[username]/starter-project1-phy320620-fall2024-part1.git
+  git clone [repository url]
   ```
-  You can also obtain the actual repository by using this repository's url (See Part 0, Part 4).
 
   This repository has a subdirectory called __g-quad__ and you will perform MD simulations of a G-quadruplex there. In the direcotry are three subdirectories: 1) input_data, 2) setup, and 3) simulations. The following files have been set up for you to run your MD simulations:
 
