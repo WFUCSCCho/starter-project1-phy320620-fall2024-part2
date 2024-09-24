@@ -11,7 +11,7 @@
 #SBATCH --mem=128mb
 
 # load the NAMD module
-module load rhel7/namd/2.14-multicore
+module load apps/namd/3.0b6
 
 # set home directory
 HOMEDIR=/deac/phy/classes/phy620/[username]/[ID]/simulations/
@@ -44,7 +44,7 @@ do
     cd $SCRATCHDIR
 
     # run NAMD scripts 
-    namd2 +auto-provision $SCRATCHDIR/dyna_${i}e.conf > $SCRATCHDIR/dyna_${i}e.out
+    namd3 +auto-provision $SCRATCHDIR/dyna_${i}e.conf > $SCRATCHDIR/dyna_${i}e.out
 
     # copy everything over
     cp dyna_${i}e.out \
