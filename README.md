@@ -28,6 +28,8 @@ Note: This portion of the project will require that you have already mastered th
 
   This repository has a subdirectory called __g-quad__ and you will perform MD simulations of a G-quadruplex there. In the direcotry are three subdirectories: 1) input_data, 2) setup, and 3) simulations. The following files have been set up for you to run your MD simulations:
 
+  | File | Description |
+  | --- | --- |
   | input_data/45S.pdb | PDB file containing the coordinates of a G-quadruplex |
   | input_data/k.pdb | PDB file containing the coordinates of potassium ions in the G-quadruplex |
   | setup/top_all36_prot_na.rtf | CHARMM force field topology file |
@@ -74,6 +76,7 @@ Copy the 45S.pdb and k.pdb files to the “setup” subdirectory.
 6. Next we will use the VMD script setup.pgn to convert the 45S.pdb and k.pdb file into a set of NAMD-style files that it is used to handling. 
 
 This is a generic script for any biomolecule. You will need to modify it using the __nano__ program. 
+
   a. Open “setup.pgn” using __nano__.
   
   b. Replace all instances of “\[ID\]” (including brackets!) with “45S”.
@@ -106,6 +109,8 @@ To verify that everything really is fine, type “vmd 45S_wbi.psf 45S_wbi.pdb”
 ![image](https://github.com/user-attachments/assets/c181cbe4-1c81-4ebe-95f3-9ef1f2b9f6a7)
 
 My screen looks differently from yours only because I selected the ions and changed their drawing method as VDW. Exit VMD.
+
+Copy the 445S_wbi.psf and 45S_wbi.pdb files to the “simulations” subdirectory.
 
 8. Use __nano__ to open up the 45S_wbi.pdb file. On the first line, first column is “CRYST1”. The next three sets of numbers are the x-, y-, and z-dimensions of the water box. Save the water box dimensions. Exit out of the program.
 
@@ -157,6 +162,6 @@ In the “ST” column, an “R” indicates that it is currently running and a 
 
 I strongly recommend that you periodically “baby-sit” your MD simulation until it is finished.  Note: This should take at least 24 hours, but no longer than two days. Wait patiently until your simulations are finished. If something seems wrong, contact me.
 
-14. When your MD simulation is finished, you can visualize it using VMD and even save it as a video.
+14. When your MD simulation is finished, you can visualize it using VMD and even save it as a video: [Trajectories and Movie Making](https://www.ks.uiuc.edu/Training/Tutorials/vmd/tutorial-html/node3.html)
 
 __Turn in the movie on Canvas.  Feel free to use any artistic license you please.__
