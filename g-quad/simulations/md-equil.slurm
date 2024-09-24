@@ -11,7 +11,7 @@
 #SBATCH --mem=128mb
 
 # load the NAMD module
-module load rhel7/namd/2.14-multicore
+module load apps/namd/3.0b6
 
 # set home directory
 HOMEDIR=/deac/phy/classes/phy620/[username]/[ID]/simulations
@@ -34,7 +34,7 @@ cp par_all36_prot_na.prm \
 cd $SCRATCHDIR
 
 # run NAMD scripts 
-namd2 +auto-provision $SCRATCHDIR/equil_1e.conf > $SCRATCHDIR/equil_1e.out
+namd3 +auto-provision $SCRATCHDIR/equil_1e.conf > $SCRATCHDIR/equil_1e.out
 
 # copy everything over
 cp equil_1e.out \
